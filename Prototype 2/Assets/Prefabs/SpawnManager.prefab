@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2551453511443948158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2551453511443948096}
+  - component: {fileID: 2551453511443948097}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2551453511443948096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551453511443948158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.47, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2551453511443948097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551453511443948158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2fca902740d1428abc5f266448a8106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalPrefabDown:
+  - {fileID: 9137086211352826548, guid: f0a5d14c77ba94063904c5b877ec4fb8, type: 3}
+  - {fileID: 5758362448557720812, guid: f515c3294efc04527b221dfadfb52048, type: 3}
+  - {fileID: 7167210284089168934, guid: 53934f57e178a4e35b6e7c627286335f, type: 3}
+  - {fileID: 3670199424114109941, guid: 192d778f6ef7947bd9c4fecca5c483e2, type: 3}
+  animalPrefabLeftRight:
+  - {fileID: 6871866295629233924, guid: 4ec787ae94011436f8d4c07ee0b5eb77, type: 3}
+  - {fileID: 3807451739485728680, guid: 7d454f57a73714519adb0a95ab0e891e, type: 3}
+  - {fileID: 2113577282985933670, guid: 4fd4a4a81dd65474fa070dca8b31a336, type: 3}
+  - {fileID: 4684301257260402673, guid: 4033a036e1aba41e799a10b969114436, type: 3}
+  animalPrefabRightLeft:
+  - {fileID: 9062735730741789947, guid: 50ff6ec60afa940aabbcd61a02210370, type: 3}
+  - {fileID: 7729585994518008165, guid: ef93ff1f2e1c24a23b41c63c99b2ad83, type: 3}
+  - {fileID: 221880241235217401, guid: 81d8edf1a9bc3495b8217f6df1e1a38c, type: 3}
+  - {fileID: 8484904272055968016, guid: 5cff4c5b4be644afc9d53b6b1ca7c7a6, type: 3}
+  spawnRangeX: 10
+  spawnPosZ: 20
+  startDelay: 5
+  spawnInterval: 1.5
