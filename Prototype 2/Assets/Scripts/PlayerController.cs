@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public float verticalInput;
     public float sidewaysSpeed = 10f;
     public float xRange = 10;
+    public Joystick joystick;
+    public bool IsKeyboard = true;
+    public bool IsTouch = false;
     //public float rotateRate = 50f;
 
     //public GameObject projectilePrefab;
@@ -29,15 +32,7 @@ public class PlayerController : MonoBehaviour
         //    transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         //}
 
-        //Box limit
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x,-xRange,xRange), transform.position.y, Mathf.Clamp(transform.position.z, 0, 15));
 
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-        //sideways input
-        transform.Translate(Vector3.right * Time.deltaTime * sidewaysSpeed * horizontalInput);
-        //vertical input
-        transform.Translate(new Vector3(0, 0, 1) * Time.deltaTime * sidewaysSpeed * verticalInput);
 
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
@@ -54,6 +49,73 @@ public class PlayerController : MonoBehaviour
         //{
         //    transform.Rotate(0, 1 * rotateRate, 0, Space.Self);
         //}
+        keyboardControl(IsKeyboard);
+        touchControl(IsTouch);
 
+    }
+
+    void keyboardControl(bool x)
+    {
+        if(x)
+        {
+            //Box limit
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -xRange, xRange), transform.position.y, Mathf.Clamp(transform.position.z, 0, 15));
+
+            horizontalInput = Input.GetAxis("Horizontal");
+            verticalInput = Input.GetAxis("Vertical");
+            //sideways input
+            transform.Translate(Vector3.right * Time.deltaTime * sidewaysSpeed * horizontalInput);
+            //vertical input
+            transform.Translate(new Vector3(0, 0, 1) * Time.deltaTime * sidewaysSpeed * verticalInput);
+        }
+        else if(!x)
+        {
+
+        }
+    }
+
+    void touchControl (bool x)
+    {
+        if(x)
+        {
+            //Box limit
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -xRange, xRange), transform.position.y, Mathf.Clamp(transform.position.z, 0, 15));
+            if(joystick.Horizontal >= .2f)
+            {
+                horizontalInput = 1;
+            }
+            else if(joystick.Horizontal <= -.2f)
+            {
+                horizontalInput = -1;
+            }
+            else
+            {
+                horizontalInput = 0;
+            }
+
+            if (joystick.Vertical >= .2f)
+            {
+                verticalInput = 1;
+            }
+            else if (joystick.Vertical <= -.2f)
+            {
+                 verticalInput = -1;
+            }
+            else
+            {
+                verticalInput = 0;
+            }
+
+            //sideways input
+            transform.Translate(Vector3.right * Time.deltaTime * sidewaysSpeed * horizontalInput);
+            //vertical input
+            transform.Translate(new Vector3(0, 0, 1) * Time.deltaTime * sidewaysSpeed * verticalInput);
+
+
+        }
+        else if(!x)
+        {
+
+        }
     }
 }

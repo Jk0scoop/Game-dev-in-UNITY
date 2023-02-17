@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Version Scenes/V1_touch.unity
+    guid: 9926fdf7cd0624c76aeffe72d315bd12
   m_configObjects: {}
